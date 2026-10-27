@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Elias Fong
+- **Dot Number**: fong.174
+- **Due Date**: 11/14
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,19 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I have varied interests both academically and personally. Career wise I'd really
+like this project to expand my understanding of both my computer science
+discipline and also the statistics/math I have to learn for my major. As for my
+hobbies, I enjoy table top role playing games, cooking, hosting friends, video
+games, rockclimbing, hiking, and instrument playing!
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +130,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -211,68 +197,102 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Matrix1
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A muttable matrix data structure used for linear algebra related code.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - createNewRep() : Creates a new Matrix representation.
+    - numberOfRows() : Returns the number of rows of this.
+    - numberOfColumns() : Returns the number of columns of this.
+    - row(int i) : Returns a 1 x this.numberOfColumns() Matrix at index i (note
+    that indexing begins at 1 for the client).
+    - row(int j) : Returns a this.numberOfRows() x 1 Matrix at index j (note
+    that indexing begins at 1 for the client).
+    - entry(int i, int j) : Returns the entry of a matrix corresponding to i, j.
+    - add(Matrix a) : Adds Matrix a to this.
+    - multiply(Matrix b) : Multiplies this by Matrix b.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - ref() : Returns this as a row echelon form provided it is possible to do so.
+    - rref(Matrix a) : Returns this as a reduced row echelon form provided it is possible to do so.
+    - det() : Returns a determinant value for this provided it is possible to do so.
+    - prettyPrint(SimpleWriter out) : Pretty prints this.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, matrices should be mutable since they often need to be manipulated
+      for complex operations.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, an underlying data structure would be needed, preferably something
+      that is itself mutable and already sorted in a similar fashion to rows &
+      columns.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Likely not, but inputs should be restricted to int or double types, so
+      perhaps an enum will be used.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, for example prettyPrint will print each row before a "\n" character.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: CharacterSheet
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A model view controller program that allows the user to create, manipulate
+    and use a Dungeons and Dragons 5th Edition Character sheet.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - calculateModifier() : calculates the modifier for a particular stat.
+    - changeStat(CharacterSheet.Stat stat) : alters the stat value for a
+    characters particular stat.
+    - changeProficiency(CharacterSheet.Proficiency proficiencyStatus,
+    CharacterSheet.Skills skill) : alters how proficient a character is
+    in a skill.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - roll(CharacterSheet.Skill skill) : rolls a standard d20 roll for a skill
+    check factoring in modifiers.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Absolutely, a character sheet must be mutable as they level up!
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think so, the roll method specifically would likely need to use the
+      random Java Utility.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Definitely, there are only so many skills in Dnd. Don't want people
+      adding there own.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, roll would use methods from the kernel representation to calculate
+      a final result.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: DialogueTree
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Models a dialogue tree for a kind of video game dialogue.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - createNewRep() : Creates a new DialogueTree representation.
+    - add(Map.Pair<Integer, String> i, string) : Adds a dialogue option as
+    a child of the current DialogueTree.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - choose(int i) : Chooses a dialogue option and updates the conversation
+    history.
+    - toggleHistory() : toggles the conversation history menu for viewing.
+    - play() : plays this as a dialogue you can interact with.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since dialogue may have to be added or removed.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, I am electing to do so since I would rather have the client input
+      numbers for dialogue options than strings since it'd be easier. Also an
+      already made tree component would just make life easier.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Maybe? I'd have to see what comes up.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Honestly no, not yet at least, I think that playing around with
+      secondary methods I may find what I need.
 
 ## Post-Assignment
 
@@ -280,8 +300,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -320,8 +338,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -330,11 +346,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -360,8 +372,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
