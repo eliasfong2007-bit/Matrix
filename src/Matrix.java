@@ -1,6 +1,5 @@
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
-import components.set.Set;
 import components.simplereader.SimpleReader;
 import components.simplereader.SimpleReader1L;
 import components.simplewriter.SimpleWriter;
@@ -17,18 +16,22 @@ public class Matrix {
      */
     private Sequence<Sequence<Integer>> matrix;
 
+    /**
+     * Creates new representation for Matrix.
+     */
     private void createNewRep() {
-        this.matrix = new Sequence1L<Sequence<Integer>();
+        this.matrix = new Sequence1L<Sequence<Integer>>();
     }
 
     /*
      * Constructors
      * --------------------------------------------------------------
      */
+
     /**
-     * Constructor
+     * No argument constructor.
      */
-    public void Matrix1L() {
+    public void matrix1L() {
         this.createNewRep();
     }
 
@@ -36,24 +39,36 @@ public class Matrix {
      * Standard methods -------------------------------------------------------
      */
 
+    /**
+     * Clears matrix representation.
+     */
     public final void clear() {
         this.createNewRep();
     }
 
-    @Override
-    public final void transferFrom(Set<T> source) {
+    /**
+     * Transfers the representation from source into this.
+     *
+     * @param source
+     * @clears source
+     */
+    public final void transferFrom(Sequence<Sequence<Integer>> source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: source is not this";
-        assert source instanceof Set3a<?> : ""
-                + "Violation of: source is of dynamic type Set3<?>";
-        /*
-         * This cast cannot fail since the assert above would have stopped
-         * execution in that case: source must be of dynamic type Set3a<?>, and
-         * the ? must be T or the call would not have compiled.
-         */
-        Set3a<T> localSource = (Set3a<T>) source;
-        this.tree = localSource.tree;
+        Matrix localSource = (Matrix) source;
+        this.matrix = localSource.matrix;
         localSource.createNewRep();
+    }
+
+    /**
+     * Copies the representation from source into this.
+     *
+     * @param source
+     */
+    public final void copyFrom(Sequence<Sequence<Integer>> source) {
+        assert source != null : "Violation of: source is not null";
+        assert source != this : "Violation of: source is not this";
+
     }
 
     /**
