@@ -14,13 +14,25 @@ public class Matrix {
     /**
      * Matrix that will be manipulated.
      */
-    private Sequence<Sequence<Integer>> matrix;
+    private Sequence<Sequence<Double>> matrix;
+
+    /**
+     * Stored number of rows for a matrix.
+     */
+    private int numberOfRows;
+
+    /**
+     * Stored number of columns for this matrix.
+     */
+    private int numberOfColumns;
 
     /**
      * Creates new representation for Matrix.
      */
     private void createNewRep() {
-        this.matrix = new Sequence1L<Sequence<Integer>>();
+        this.matrix = new Sequence1L<Sequence<Double>>();
+        this.numberOfColumns = 0;
+        this.numberOfRows = 0;
     }
 
     /*
@@ -52,7 +64,7 @@ public class Matrix {
      * @param source
      * @clears source
      */
-    public final void transferFrom(Sequence<Sequence<Integer>> source) {
+    public final void transferFrom(Sequence<Sequence<Double>> source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: source is not this";
         Matrix localSource = (Matrix) source;
@@ -65,10 +77,73 @@ public class Matrix {
      *
      * @param source
      */
-    public final void copyFrom(Sequence<Sequence<Integer>> source) {
+    public final void copyFrom(Sequence<Sequence<Double>> source) {
         assert source != null : "Violation of: source is not null";
         assert source != this : "Violation of: source is not this";
+        for (int i = 0; i < source.length(); i++) {
+            Sequence<Double> sourceRow = source.entry(i);
+            Sequence<Double> toCopyRow = this.matrix.entry(i);
+            for (int j = 0; j < sourceRow.length(); j++) {
+                toCopyRow.replaceEntry(j, sourceRow.entry(j));
+            }
+        }
+    }
 
+    /*
+     * Kernel Methods ---------------------------------------------------------
+     */
+
+    /**
+     * Returns the number of rows this has.
+     *
+     * @return the number of rows this has.
+     */
+    public int numberOfRows() {
+        return this.numberOfRows;
+    }
+
+    /**
+     * Returns the number of columns this has.
+     *
+     * @return The number of columns this has.
+     */
+    public int numberOfColumns() {
+        return this.numberOfColumns;
+    }
+
+    /**
+     * Returns the entry at Matrix entry i, j. Note that indexing for rows and
+     * columns begins at 1 for the columns to align to mathematical conventions.
+     *
+     * @param i
+     *            Row number index
+     * @param j
+     *            column number index
+     * @requires i <= this.numberOfRows()), j <= this.numberOfColumns().
+     * @return The entry as described above.
+     */
+    public double entry(int i, int j) {
+        assert i <= this.numberOfRows : "Invalid index inputs";
+        assert j <= this.numberOfColumns : "Invalid index inputs";
+        return this.matrix.entry(i - 1).entry(j - 1);
+    }
+
+    /**
+     * Replaces the value at Matrix entry i, j. Note that indexing for rows and
+     * columns begins at 1 for the columns to align to mathematical conventions.
+     *
+     * @param i
+     *            Tow number index
+     * @param j
+     *            Column number index
+     * @param newValue
+     *            Value to replace the old one
+     * @requires i <= this.numberOfRows()), j <= this.numberOfColumns().
+     */
+    public void setEntry(int i, int j, double newValue) {
+        assert i <= this.numberOfRows : "Invalid index inputs";
+        assert j <= this.numberOfColumns : "Invalid index inputs";
+        this.matrix.entry(i - 1).replaceEntry(j - 1, newValue);
     }
 
     /**
