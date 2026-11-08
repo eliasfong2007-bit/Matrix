@@ -11,3 +11,8 @@ the following form: YYYY.0M.0D.
 ### Added
 
 Brainstormed component ideas for project.
+
+## 2026.11.8
+
+Implemented MVP and main method for it including all kernel methods, and
+additional method prettyprint.
