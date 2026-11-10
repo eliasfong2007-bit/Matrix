@@ -47,6 +47,8 @@ methods only.
 
 ## Assignment Checklist
 
+<!-- TODO: browse the checklist then delete this comment -->
+
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -102,7 +104,7 @@ Below is further rationale/explanation for the rubric items above:
 2. The abstract class implementation must implement all methods
    from the enhanced interface (i.e., all secondary methods), and these methods
    must be implemented using only the kernel and Standard methods. In addition,
-   the abstract class must implement `toString()` and `equals()`, but you may
+   the abstract class must implement `toString()` and `equsals()`, but you may
    implement `hashCode()` as well. In general, the methods do not have to be
    100% correct, but their logic must make sense (i.e., no low effort
    implementations).
@@ -133,8 +135,6 @@ Below is further rationale/explanation for the rubric items above:
 > to see them. If you don't like this workflow, you may try following the
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
