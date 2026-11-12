@@ -6,11 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## 2026.10.27
+## 2026.11.12
 
 ### Added
 
-Brainstormed component ideas for project.
+- Designed kernel implementation for Matrix component
+
+### Updated
+
+- Changed design to include kernel methods.
+
+## 2026.11.11
+
+### Added
+
+- Designed abstract class for Matrix component
+
+### Updated
+
+- Changed design to include required secondary methods, secondary methods from
+matrix interface.
+- Removed ref, rref, and det methods to align with project scope.
 
 ## 2026.11.09
 
@@ -28,6 +44,12 @@ can also be manipulated.
 
 Implemented MVP and main method for it including all kernel methods, and
 additional method prettyprint.
+
+## 2026.10.27
+
+### Added
+
+Brainstormed component ideas for project.
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
 

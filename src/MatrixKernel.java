@@ -33,7 +33,7 @@ public interface MatrixKernel extends Standard<Matrix> {
     /**
      * Returns a this.numberOfRows x 1 matrix representing the row at specified
      * index j.
-     * 
+     *
      * @return Matrix as described above.
      */
     Matrix column(int j);

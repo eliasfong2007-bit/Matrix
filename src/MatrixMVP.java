@@ -42,7 +42,7 @@ public class MatrixMVP {
     /**
      * No argument constructor.
      */
-    public Matrix() {
+    public MatrixMVP() {
         this.createNewRep();
     }
 

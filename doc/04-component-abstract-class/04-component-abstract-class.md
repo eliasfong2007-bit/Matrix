@@ -104,7 +104,7 @@ Below is further rationale/explanation for the rubric items above:
 2. The abstract class implementation must implement all methods
    from the enhanced interface (i.e., all secondary methods), and these methods
    must be implemented using only the kernel and Standard methods. In addition,
-   the abstract class must implement `toString()` and `equsals()`, but you may
+   the abstract class must implement `toString()` and `equals()`, but you may
    implement `hashCode()` as well. In general, the methods do not have to be
    100% correct, but their logic must make sense (i.e., no low effort
    implementations).
@@ -155,8 +155,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
-
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
 Here's what I would expect to see at the minimum:
@@ -189,8 +187,6 @@ like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
